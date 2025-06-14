@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjVoorbereidingExamenSem2.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace prjVoorbereidingExamenSem2
         public JSONviewer()
         {
             InitializeComponent();
+        }
+
+        private void btnLoadJson_Click(object sender, EventArgs e)
+        {
+            Schoolklasse school = new Schoolklasse();
+            foreach (Schoolklasse s in school.Listscholen) { 
+                lsbJSONData.Items.Add(s);
+            }
         }
     }
 }

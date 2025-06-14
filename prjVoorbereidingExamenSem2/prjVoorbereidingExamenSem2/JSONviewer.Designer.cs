@@ -48,6 +48,7 @@
             this.btnLoadJson.TabIndex = 1;
             this.btnLoadJson.Text = "Load JSON";
             this.btnLoadJson.UseVisualStyleBackColor = true;
+            this.btnLoadJson.Click += new System.EventHandler(this.btnLoadJson_Click);
             // 
             // JSONviewer
             // 
