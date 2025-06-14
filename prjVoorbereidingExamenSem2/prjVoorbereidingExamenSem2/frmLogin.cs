@@ -37,5 +37,20 @@ namespace prjVoorbereidingExamenSem2
                 MessageBox.Show("Dit is niet juist");
             }
         }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            if (txtSignupWachtwoord.Text == txtSignupBevestigWachtwoord.Text) {
+                User user = new User();
+                user.Username = txtSignupGebruikersnaam.Text;
+                user.Password = txtSignupWachtwoord.Text;
+
+                userDA.Register(user);
+            }
+            else
+            {
+                MessageBox.Show("Wachtwoorden verschillend");
+            }
+        }
     }
 }
