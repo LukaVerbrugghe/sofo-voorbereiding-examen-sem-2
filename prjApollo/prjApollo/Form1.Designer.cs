@@ -83,6 +83,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.lsvLeveranciers.FullRowSelect = true;
             this.lsvLeveranciers.HideSelection = false;
             this.lsvLeveranciers.Location = new System.Drawing.Point(13, 13);
             this.lsvLeveranciers.Name = "lsvLeveranciers";
@@ -90,6 +91,7 @@
             this.lsvLeveranciers.TabIndex = 0;
             this.lsvLeveranciers.UseCompatibleStateImageBehavior = false;
             this.lsvLeveranciers.View = System.Windows.Forms.View.Details;
+            this.lsvLeveranciers.SelectedIndexChanged += new System.EventHandler(this.lsvLeveranciers_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -208,6 +210,7 @@
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12});
+            this.lsvWijnen.FullRowSelect = true;
             this.lsvWijnen.HideSelection = false;
             this.lsvWijnen.Location = new System.Drawing.Point(593, 57);
             this.lsvWijnen.Name = "lsvWijnen";

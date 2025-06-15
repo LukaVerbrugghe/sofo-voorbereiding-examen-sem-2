@@ -30,5 +30,27 @@ namespace prjApollo
                 lsvLeveranciers.Items.Add(item);
             }
         }
+
+        private void lsvLeveranciers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lsvLeveranciers.SelectedItems.Count == 0)
+                return;
+
+            ListViewItem item = lsvLeveranciers.SelectedItems[0];
+
+            txtLevernummer.Text = item.Text;
+            txtFirmanaam.Text = item.SubItems[1].Text;
+            txtAdres.Text = item.SubItems[2].Text;
+            txtPostnr.Text = item.SubItems[3].Text;
+            txtGemeente.Text = item.SubItems[4].Text;
+
+            //inladen wijnen
+            lsvWijnen.Items.Clear();
+            foreach(Wijn w in WijnenDA.OphalenWijenen(Convert.ToInt32(item.Text))){
+                ListViewItem wijnItem = new ListViewItem(new string[] {w.Code, w.Jaar, w.Omschrijving, w.Inhoud, w.PrijsPerFles.ToString(), w.HoeveelheidPerVerpakking.ToString(), w.Voorraad.ToString()});
+                wijnItem.Tag = w;
+                lsvWijnen.Items.Add(wijnItem);
+            }
+        }
     }
 }
