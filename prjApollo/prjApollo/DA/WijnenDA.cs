@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace prjApollo.DA
 {
@@ -47,6 +48,27 @@ namespace prjApollo.DA
                     "HoeveelheidPerVerpakking"]),
                 Voorraad = Convert.ToInt32(record["Voorraad"])
             };
+        }
+
+        public static void Edit(Wijn wijnUpdate)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+
+            string sql = "UPDATE tblwijnen SET Code=@Code, Jaar=@Jaar, Omschrijving=@Omschrijving, Inhoud=@Inhoud, PrijsPerFles=@ppf, HoeveelheidPerVerpakking=@Hoeveelheid, Voorraad=@Voorraad";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@Code",wijnUpdate.Code);
+            cmd.Parameters.AddWithValue("@Jaar",wijnUpdate.Jaar);
+            cmd.Parameters.AddWithValue("@Omschrijving", wijnUpdate.Omschrijving);
+            cmd.Parameters.AddWithValue("@Inhoud",wijnUpdate.Inhoud);
+            cmd.Parameters.AddWithValue("@ppf",wijnUpdate.PrijsPerFles);
+            cmd.Parameters.AddWithValue("@Hoeveelheid", wijnUpdate.HoeveelheidPerVerpakking);
+            cmd.Parameters.AddWithValue("@Voorraad",wijnUpdate.Voorraad);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show("Succes");
         }
     }
 }

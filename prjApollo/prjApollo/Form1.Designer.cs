@@ -244,6 +244,7 @@
             this.lsvWijnen.TabIndex = 4;
             this.lsvWijnen.UseCompatibleStateImageBehavior = false;
             this.lsvWijnen.View = System.Windows.Forms.View.Details;
+            this.lsvWijnen.SelectedIndexChanged += new System.EventHandler(this.lsvWijnen_SelectedIndexChanged);
             // 
             // columnHeader6
             // 
@@ -413,6 +414,7 @@
             this.btnWijzigWijn.TabIndex = 3;
             this.btnWijzigWijn.Text = "Wijzig";
             this.btnWijzigWijn.UseVisualStyleBackColor = true;
+            this.btnWijzigWijn.Click += new System.EventHandler(this.btnWijzigWijn_Click);
             // 
             // btnAddWijn
             // 

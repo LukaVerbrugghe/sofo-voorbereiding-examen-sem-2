@@ -87,5 +87,36 @@ namespace prjApollo
             LeveranciersDA.Delete(Convert.ToInt32(txtLevernummer.Text));
             laadLeveranciers();
         }
+
+        private void btnWijzigWijn_Click(object sender, EventArgs e)
+        {
+            Wijn wijn = new Wijn();
+
+            wijn.Code = txtCode.Text;
+            wijn.Jaar = txtJaar.Text;
+            wijn.Omschrijving = txtOmschrijving.Text;
+            wijn.Inhoud = txtInhoud.Text;
+            wijn.PrijsPerFles = Convert.ToDouble(txtPpf.Text);
+            wijn.HoeveelheidPerVerpakking = Convert.ToInt32(txtPpp.Text);
+            wijn.Voorraad = Convert.ToInt32(txtVoorraad.Text);
+        }
+
+        private void lsvWijnen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvWijnen.SelectedItems.Count == 0)
+                return;
+
+            ListViewItem item = lsvWijnen.SelectedItems[0];
+
+            txtCode.Text = item.Text;
+            txtJaar.Text = item.SubItems[1].Text;
+            txtOmschrijving.Text = item.SubItems[2].Text;
+            txtInhoud.Text = item.SubItems[3].Text;
+            txtPpf.Text = item.SubItems[4].Text;
+            txtPpp.Text = item.SubItems[5].Text;
+            txtVoorraad.Text = item.SubItems[6].Text;
+
+            
+        }
     }
 }
