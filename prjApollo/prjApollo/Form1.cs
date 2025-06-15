@@ -67,5 +67,19 @@ namespace prjApollo
 
             laadLeveranciers();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Leverancier leverancier = new Leverancier();
+
+            leverancier.firmanaam = txtFirmanaam.Text;
+            leverancier.adres = txtAdres.Text;
+            leverancier.postnr = txtPostnr.Text;
+            leverancier.gemeente = txtGemeente.Text;
+
+            LeveranciersDA.Add(leverancier);
+
+            laadLeveranciers();
+        }
     }
 }

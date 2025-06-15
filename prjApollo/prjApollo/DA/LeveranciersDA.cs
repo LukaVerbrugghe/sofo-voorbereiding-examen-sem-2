@@ -64,5 +64,25 @@ namespace prjApollo.DA
             conn.Close();
             MessageBox.Show("Succes");
         }
+
+        public static void Add(Leverancier leverancier)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+
+            string sql = "INSERT INTO tblleveranciers (firmanaam, adres, postnr, gemeente) VALUES (@firmanaam, @adres, @postnr, @gemeente)";
+            MySqlCommand cmd = new MySqlCommand( sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@firmanaam", leverancier.firmanaam);
+            cmd.Parameters.AddWithValue("@adres", leverancier.adres);
+            cmd.Parameters.AddWithValue("@postnr", leverancier.postnr);
+            cmd.Parameters.AddWithValue("@gemeente", leverancier.gemeente);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            MessageBox.Show("Succes");
+        }
     }
 }
