@@ -81,5 +81,11 @@ namespace prjApollo
 
             laadLeveranciers();
         }
+
+        private void btnVerwijder_Click(object sender, EventArgs e)
+        {
+            LeveranciersDA.Delete(Convert.ToInt32(txtLevernummer.Text));
+            laadLeveranciers();
+        }
     }
 }

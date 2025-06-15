@@ -84,5 +84,20 @@ namespace prjApollo.DA
 
             MessageBox.Show("Succes");
         }
+
+        public static void Delete(int leveranciersnummer)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+
+            string sql = "DELETE FROM tblleveranciers WHERE leveranciernummer = @leveranciernummer";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@leveranciernummer", leveranciersnummer);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show("Succes");
+        }
     }
 }
