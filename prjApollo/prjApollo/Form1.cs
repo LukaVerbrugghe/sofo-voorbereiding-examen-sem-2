@@ -1,4 +1,6 @@
-﻿using System;
+﻿using prjApollo.DA;
+using prjApollo.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,18 @@ namespace prjApollo
         public Form1()
         {
             InitializeComponent();
+            laadLeveranciers();
+        }
+
+        private void laadLeveranciers()
+        {
+            lsvLeveranciers.Items.Clear();
+            foreach(Leverancier l in LeveranciersDA.OphalenLeveranciers())
+            {
+                ListViewItem item = new ListViewItem(new string[] {l.leveranciernummer.ToString(), l.firmanaam, l.adres, l.postnr, l.gemeente});
+                item.Tag = l;
+                lsvLeveranciers.Items.Add(item);
+            }
         }
     }
 }
