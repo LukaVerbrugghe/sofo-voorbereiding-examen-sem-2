@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace prjApollo.DA
 {
@@ -42,6 +43,26 @@ namespace prjApollo.DA
                 postnr = record["postnr"].ToString(),
                 gemeente = record["gemeente"].ToString()
             };
+        }
+
+        public static void Edit(Leverancier leverancierUpdate)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+
+            string sql = "UPDATE tblleveranciers SET firmanaam=@firmanaam, adres=@adres, postnr=@postnr, gemeente=@gemeente WHERE leveranciernummer = @leveranciernummer";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@firmanaam", leverancierUpdate.firmanaam);
+            cmd.Parameters.AddWithValue("@adres", leverancierUpdate.adres);
+            cmd.Parameters.AddWithValue("@postnr", leverancierUpdate.postnr);
+            cmd.Parameters.AddWithValue("@gemeente", leverancierUpdate.gemeente);
+            cmd.Parameters.AddWithValue("@leveranciernummer", leverancierUpdate.leveranciernummer);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            MessageBox.Show("Succes");
         }
     }
 }

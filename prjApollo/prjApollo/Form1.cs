@@ -52,5 +52,20 @@ namespace prjApollo
                 lsvWijnen.Items.Add(wijnItem);
             }
         }
+
+        private void btnWijzig_Click(object sender, EventArgs e)
+        {
+            Leverancier leverancier = new Leverancier();
+
+            leverancier.leveranciernummer = Convert.ToInt32(txtLevernummer.Text);
+            leverancier.firmanaam = txtFirmanaam.Text;
+            leverancier.adres = txtAdres.Text;
+            leverancier.postnr = txtPostnr.Text;
+            leverancier.gemeente = txtGemeente.Text;
+
+            LeveranciersDA.Edit(leverancier);
+
+            laadLeveranciers();
+        }
     }
 }

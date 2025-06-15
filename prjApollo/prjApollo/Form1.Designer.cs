@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.lsvLeveranciers = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.txtLevernummer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +48,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnVerwijder = new System.Windows.Forms.Button();
             this.lsvWijnen = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSorteerWijnen = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,18 +73,6 @@
             this.btnWijzigWijn = new System.Windows.Forms.Button();
             this.btnAddWijn = new System.Windows.Forms.Button();
             this.btnVerwijderWijn = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lsvLeveranciers
@@ -92,6 +92,29 @@
             this.lsvLeveranciers.UseCompatibleStateImageBehavior = false;
             this.lsvLeveranciers.View = System.Windows.Forms.View.Details;
             this.lsvLeveranciers.SelectedIndexChanged += new System.EventHandler(this.lsvLeveranciers_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Lvnr";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Firma naam";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Adres";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "PostNr";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Gemeente";
+            this.columnHeader5.Width = 100;
             // 
             // label1
             // 
@@ -181,6 +204,7 @@
             this.btnWijzig.TabIndex = 3;
             this.btnWijzig.Text = "Wijzig";
             this.btnWijzig.UseVisualStyleBackColor = true;
+            this.btnWijzig.Click += new System.EventHandler(this.btnWijzig_Click);
             // 
             // btnAdd
             // 
@@ -218,6 +242,37 @@
             this.lsvWijnen.TabIndex = 4;
             this.lsvWijnen.UseCompatibleStateImageBehavior = false;
             this.lsvWijnen.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Code";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Jaar";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Omschrijving";
+            this.columnHeader8.Width = 120;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Inhoud";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "ppf";
+            this.columnHeader10.Width = 40;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Hoeveelheid";
+            this.columnHeader11.Width = 80;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Voorraad";
             // 
             // cboSorteerWijnen
             // 
@@ -374,60 +429,6 @@
             this.btnVerwijderWijn.TabIndex = 3;
             this.btnVerwijderWijn.Text = "Verwijder";
             this.btnVerwijderWijn.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Lvnr";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Firma naam";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Adres";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "PostNr";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Gemeente";
-            this.columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Code";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Jaar";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Omschrijving";
-            this.columnHeader8.Width = 120;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Inhoud";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "ppf";
-            this.columnHeader10.Width = 40;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Hoeveelheid";
-            this.columnHeader11.Width = 80;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Voorraad";
             // 
             // Form1
             // 
